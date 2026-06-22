@@ -1,3 +1,8 @@
+ --------------------------------------------------------------------------
+
+  Before
+
+--------------------------------------------------------------------------
 
    PASS  Tests\Unit\ExampleTest
   ✓ that true is true
@@ -170,3 +175,32 @@
 
   Tests:    9 failed, 5 passed (17 assertions)
   Duration: 0.70s
+
+ --------------------------------------------------------------------------
+
+  After
+
+--------------------------------------------------------------------------
+
+   PASS  Tests\Unit\ExampleTest
+  ✓ that true is true
+
+   PASS  Tests\Feature\ChurnRiskAnalyticsTest
+  ✓ it returns 401 for unauthenticated requests                                                              0.21s  
+  ✓ it returns 403 for authenticated non-coach users                                                         0.03s  
+  ✓ it returns clients grouped into at_risk and active with correct summary counts                           0.02s  
+  ✓ it calculates 76 days inactive as high risk for the brief example                                        0.01s  
+  ✓ it uses joined_at as the fallback last_activity_at when a client has no activity logs                    0.01s  
+  ✓ it classifies exactly 30 days inactive as medium risk                                                    0.01s  
+  ✓ it classifies exactly 60 days inactive as high risk                                                      0.01s  
+  ✓ it filters at_risk to high-risk only when risk_level=high and leaves summary unfiltered                  0.01s  
+  ✓ it returns only active clients when risk_level=none and at_risk is empty                                 0.02s  
+  ✓ it sorts at_risk by days_inactive descending by default                                                  0.01s  
+  ✓ it sorts clients by name ascending when sort=name                                                        0.01s  
+  ✓ it uses at most 2 database queries for a coach with many clients                                         0.02s  
+
+   PASS  Tests\Feature\ExampleTest
+  ✓ the application returns a successful response                                                            0.03s  
+
+  Tests:    14 passed (54 assertions)
+  Duration: 0.57s
